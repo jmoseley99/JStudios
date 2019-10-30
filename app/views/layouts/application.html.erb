@@ -20,16 +20,17 @@
         <li><a href="/bookings">Book A Studio</a></li>
         <li><a href="#">View Bookings</a></li>
         <li><a href="/barbers">Contact Us</a></li>
-
+        <% if signed_in? %>
+          <%= current_user.email %>
+          <%= button_to "Sign out", sign_out_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign in", sign_in_path %>
+        <% end %>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
 
-        <li><a href="#"><% if signed_in? %>
-            <%= current_user.email %>
-            <%= button_to "Sign out", sign_out_path, method: :delete %>
-          <% else %>
-            <%= link_to "Sign in", sign_in_path %>
-          <% end %></a></li>
+
       </ul>
     </div>
   </nav>

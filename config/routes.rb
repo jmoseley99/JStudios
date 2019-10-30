@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rooms
   resources :bookings
   get '/bookings', to: 'bookings#bookings'
   get '/index', to:'home#index'
