@@ -16,14 +16,20 @@
         <a class="navbar-brand" href="/index">JStudios</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="#">Sign In</a></li>
+        <li><a href="/sign_in">Sign In</a></li>
         <li><a href="#">Book A Studio</a></li>
         <li><a href="#">View Bookings</a></li>
         <li><a href="/barbers">Contact Us</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> </a></li>
+
+        <li><a href="#"><% if signed_in? %>
+            <%= current_user.email %>
+            <%= button_to "Sign out", sign_out_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign in", sign_in_path %>
+          <% end %></a></li>
       </ul>
     </div>
   </nav>
