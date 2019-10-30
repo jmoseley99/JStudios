@@ -1,8 +1,12 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.headerText{
-  background-color: #CCCCCC;
-  font-size: 50px;
-  text-align: left;
+.title{
+  text-align: center;
+}
+.title h1{
+  font-size: 100px;
+}
+.title h2{
+  font-size: 70px;
 }
