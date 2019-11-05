@@ -1,23 +1,15 @@
 <p id="notice"><%= notice %></p>
-<div class= 'showInfo'>
-<p>
-  <strong>Date:   </strong>
-  <%= @booking.Date %>
-</p>
-
-<p>
-  <strong>Time:   </strong>
-  <%= @booking.Time %>
-</p>
-
-<p>
-  <strong>Room Number:   </strong>
-  <%= @booking.RoomNo%>
-</p>
-  <p>
-    <strong>User ID:   </strong>
+<ul class="list-group">
+  <li class="list-group-item"><strong>Date:   </strong>
+    <%= @booking.Date %></li>
+  <li class="list-group-item"><strong>Time:   </strong>
+    <%= @booking.Time %></li>
+  <li class="list-group-item"><strong>Studio Number:   </strong>
+    <%= @booking.RoomNo%></li>
+  <li class="list-group-item"><strong>User ID:   </strong>
     <%= @booking.User_ID%>
-  </p>
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+</ul>
+
+<button type="button" class="btn btn-secondary"><%= link_to 'Edit', edit_booking_path(@booking) %></button> |
+  <button type="button" class="btn btn-secondary"><%= link_to 'Back', bookings_path %></button>
 </div>

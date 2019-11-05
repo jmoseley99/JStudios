@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<div class = 'bookingTitle'>Book A Studio Session!</div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Your Bookings</h1>
+    <p class="lead">Here you can find the bookings you've made in our studios! You can choose to show, edit or delete your bookings with the help of the buttons!</p>
+  </div>
+</div>
 
 <table class = 'table table-hover'>
   <thead class="thead-light">
     <tr>
-      <th>Date   </th>
-      <th>Time   </th>
-      <th>Room Number   </th>
+      <th>Date of Booking</th>
+      <th>Time of Booking</th>
+      <th>Studio Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,10 +24,9 @@
           <td><%= booking.Date %></td>
           <td><%= booking.Time %></td>
           <td><%= booking.RoomNo %></td>
-          <td><%= booking.User_ID %></td>
-          <td><%= link_to 'Show', booking %></td>
-          <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-          <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><button type="button" class="btn btn-secondary"><%= link_to 'Show', booking %></button></td>
+          <td><button type="button" class="btn btn-secondary"><%= link_to 'Edit', edit_booking_path(booking) %></button></td>
+          <td><button type="button" class="btn btn-secondary"><%= link_to 'Remove', booking, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
         </tr>
       <%end %>
     <% end %>
@@ -31,5 +35,5 @@
 
 <br>
 <div class = 'newBooking'>
-<%= link_to 'New Booking', new_booking_path %>
+  <button type="button" class="btn btn-success"><%= link_to 'New Booking', new_booking_path %></button>
 </div>

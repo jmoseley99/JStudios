@@ -41,4 +41,28 @@ any new booking must not clash with another
 checking clash: select bookingID from booking where time = *new booking time*, if there is a booking id, there is a clash 
 
 
+ <table>
+   <thead>
+     <tr>
+       <th>Roomid</th>
+       <th>Description</th>
+       <th colspan="3"></th>
+     </tr>
+   </thead>
  
+   <tbody>
+     <% @rooms.each do |room| %>
+       <tr>
+         <td><%= room.RoomID %></td>
+         <td><%= room.Description %></td>
+         <td><%= link_to 'Show', room %></td>
+         <td><%= link_to 'Edit', edit_room_path(room) %></td>
+         <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+     <% end %>
+   </tbody>
+ </table>
+ 
+ <br>
+ 
+ <%= link_to 'New Room', new_room_path %>
