@@ -12,9 +12,12 @@
 
 <p>
   <strong>Room Number:   </strong>
-  <%= @booking.RoomNo %>
+  <%= @booking.RoomNo%>
 </p>
-
+  <p>
+    <strong>User ID:   </strong>
+    <%= @booking.User_ID%>
+  </p>
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>
 </div>

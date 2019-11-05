@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :require_login, only: [:new]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-
   # GET /bookings
   # GET /bookings.json
   def index
@@ -69,6 +69,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:Date, :Time, :RoomNo)
+      params.require(:booking).permit(:Date, :Time, :RoomNo, :User_ID)
     end
 end

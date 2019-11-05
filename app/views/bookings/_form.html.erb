@@ -30,6 +30,10 @@
     <%= form.label :RoomNo, 'Studio Number: ' %>
     <%= form.select :RoomNo, [1, 2, 3, 4] %>
   </div>
+  <div class = "field" style = 'display:none;'>
+    <%= form.label :User_ID, 'User ID:  ' %>
+    <%= form.select :User_ID, [current_user.id]%>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

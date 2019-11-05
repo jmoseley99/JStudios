@@ -14,14 +14,17 @@
 
   <tbody>
     <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.Date %></td>
-        <td><%= booking.Time %></td>
-        <td><%= booking.RoomNo %></td>
-        <td><%= link_to 'Show', booking %></td>
-        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if booking.User_ID == current_user.id %>
+        <tr>
+          <td><%= booking.Date %></td>
+          <td><%= booking.Time %></td>
+          <td><%= booking.RoomNo %></td>
+          <td><%= booking.User_ID %></td>
+          <td><%= link_to 'Show', booking %></td>
+          <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+          <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <%end %>
     <% end %>
   </tbody>
 </table>
