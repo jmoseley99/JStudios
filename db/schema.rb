@@ -10,22 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_165518) do
+ActiveRecord::Schema.define(version: 2019_11_14_144135) do
 
   create_table "bookings", force: :cascade do |t|
-    t.date "Date"
-    t.time "Time"
-    t.integer "RoomNo"
+    t.date "date"
+    t.time "time"
+    t.integer "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "User_ID"
+    t.integer "user_id"
+    t.integer "duration"
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.integer "RoomID"
-    t.text "Description"
+    t.integer "room_id"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
   end
 
   create_table "users", force: :cascade do |t|

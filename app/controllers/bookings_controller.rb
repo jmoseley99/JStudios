@@ -21,6 +21,8 @@ class BookingsController < ApplicationController
   def edit
   end
 
+
+
   # POST /bookings
   # POST /bookings.json
   def create
@@ -69,6 +71,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:Date, :Time, :RoomNo, :User_ID)
+      params.require(:booking).permit(:date, :time, :room_id, :user_id, :duration)
     end
 end

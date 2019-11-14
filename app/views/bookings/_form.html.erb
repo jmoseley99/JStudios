@@ -12,30 +12,48 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :Date, 'Date of booking: ' %>
-    <%= form.date_select :Date %>
+    <%= form.label :date, 'Date of booking: ' %>
+    <%= form.date_select :date,{
+        start_year: Date.today.year,
+        start_month: Date.today.month,
+        start_day: Date.today.day
+    } %>
   </div>
-
+  <script>
+    const minutes = [0, 15, 30, 45];
+  </script>
   <div class="field">
-    <%= form.label :Time, 'Time of booking: ' %>
-    <%= form.time_select :Time,
+    <%= form.label :time, 'Time of booking: ' %>
+    <%= form.time_select :time,
                       {ampm: true,
                        ignore_date: true,
                        start_hour: 9,
-                       end_hour: 18
+                       end_hour: 18,
+                        minute_step: 15
                       } %>
   </div>
-
+  <div class = "field">
+    <%= form.label :duration, "Duration of booking (minutes):" %>
+    <%= form.select :duration, [30, 60] %>
+  </div>
   <div class="field">
-    <%= form.label :RoomNo, 'Studio Number: ' %>
-    <%= form.select :RoomNo, [1, 2, 3] %>
+    <%= form.label :room_id, 'Studio Number: ' %>
+    <%= form.select :room_id, [1, 2, 3] %>
   </div>
   <div class = "field" style = 'display:none;'>
-    <%= form.label :User_ID, 'User ID:  ' %>
-    <%= form.select :User_ID, [current_user.id]%>
+    <%= form.select :user_id, [current_user.id]%>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+<div class = 'extraText'>
+  <div class = 'txtTitle'>
+    Reminder!
+  </div>
+  <h4>Studio 1: Our DJ Studio</h4>
+  <h4>Studio 2: Our Band Recording Studio</h4>
+  <h4>Studio 3: Our Production Studio</h4>
+</div>
+

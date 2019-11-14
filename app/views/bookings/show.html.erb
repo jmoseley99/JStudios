@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 <ul class="list-group">
   <li class="list-group-item"><strong>Date:   </strong>
-    <%= @booking.Date %></li>
+    <%= @booking.date %></li>
   <li class="list-group-item"><strong>Time:   </strong>
-    <%= @booking.Time %></li>
+    <%=
+      t = @booking.time
+      t.strftime("%I:%M%p") %></li>
+  <li class = "list-group-item"><strong>Duration of your session:   </strong>
+    <%= @booking.duration %></li>
   <li class="list-group-item"><strong>Studio Number:   </strong>
-    <%= @booking.RoomNo%></li>
-  <li class="list-group-item"><strong>User ID:   </strong>
-    <%= @booking.User_ID%>
+    <%= @booking.room_id%></li>
+  <li class="list-group-item"><strong>Cost:   </strong>
+    <%@rooms = Room.find_by_room_id(@booking.room_id) %>
+    <td>£<%=@rooms.price %></td>
 </ul>
 
 <button type="button" class="btn btn-secondary"><%= link_to 'Edit', edit_booking_path(@booking) %></button> |

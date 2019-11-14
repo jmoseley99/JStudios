@@ -12,18 +12,24 @@
     <tr>
       <th>Date of Booking</th>
       <th>Time of Booking</th>
+      <th>Duration (Minutes)</th>
       <th>Studio Number</th>
-      <th colspan="3"></th>
+      <th>Cost</th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @bookings.each do |booking| %>
-      <% if booking.User_ID == current_user.id %>
+      <% if booking.user_id == current_user.id %>
         <tr>
-          <td><%= booking.Date %></td>
-          <td><%= booking.Time %></td>
-          <td><%= booking.RoomNo %></td>
+          <td><%= booking.date %></td>
+          <td><%= t = booking.time
+                  t.strftime("%I:%M%p")%></td>
+          <td><%=booking.duration %></td>
+          <td><%= booking.room_id %></td>
+          <%@rooms = Room.find_by_room_id(booking.room_id) %>
+          <td>£<%=@rooms.price %></td>
           <td><button type="button" class="btn btn-secondary"><%= link_to 'Show', booking %></button></td>
           <td><button type="button" class="btn btn-secondary"><%= link_to 'Edit', edit_booking_path(booking) %></button></td>
           <td><button type="button" class="btn btn-secondary"><%= link_to 'Remove', booking, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
