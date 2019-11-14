@@ -19,9 +19,6 @@
         start_day: Date.today.day
     } %>
   </div>
-  <script>
-    const minutes = [0, 15, 30, 45];
-  </script>
   <div class="field">
     <%= form.label :time, 'Time of booking: ' %>
     <%= form.time_select :time,
@@ -55,5 +52,32 @@
   <h4>Studio 1: Our DJ Studio</h4>
   <h4>Studio 2: Our Band Recording Studio</h4>
   <h4>Studio 3: Our Production Studio</h4>
+</div>
+
+<div class = 'bookedStudios'>
+  <h4>Currently Booked Sessions (cannot overlap!)</h4>
+  <table class = 'table table-sm'>
+    <thead>
+    <tr>
+      <th>Date of Booking</th>
+      <th>Time of Booking</th>
+      <th>Duration (Minutes)</th>
+      <th>Studio Number</th>
+      <th colspan="4"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% Booking.where.not(user_id: nil).each do |booking| %>
+        <tr>
+          <td><%= booking.date %></td>
+          <td><%= t = booking.time
+                  t.strftime("%I:%M%p")%></td>
+          <td><%=booking.duration %></td>
+          <td><%= booking.room_id %></td>
+        </tr>
+      <%end %>
+    </tbody>
+  </table>
 </div>
 

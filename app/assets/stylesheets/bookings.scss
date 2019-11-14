@@ -18,9 +18,16 @@ p{
 }
 
 .extraText{
-  text-align: right;
+  position: absolute;
+  top: 75px;
+  right: 20px;
 }
 
 .txtTitle{
   font-size: 40px;
+}
+
+.bookedStudios{
+  position: absolute;
+  bottom: 20px;
 }
