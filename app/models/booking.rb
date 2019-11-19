@@ -1,11 +1,16 @@
 class Booking < ApplicationRecord
   has_one :room, foreign_key: :room_id
 
+  #These are the validations for a new booking. It is essential that a booking cannot be made without a date, time and selected studio room
+  #no_time_overlap is also validated. More explained below
   validates :date, presence: true
   validates :time, presence: true
   validates :room_id, presence: true
-  #validate :date_not_in_past
   validate :no_time_overlap
+
+  #This method checks to ensure that the user cannot book a studio session at the same time, and in the same room, as a previously booked session.
+  #A collection is made of bookings, where the date is the same to the date of the new booking. This collection is looped through. And if for any
+  #session that the times are the same, and the room is the same, then an error is thrown and the booking will not save.
 
   def no_time_overlap
     @other_bookings = Booking.where(:date => date)
@@ -15,10 +20,5 @@ class Booking < ApplicationRecord
       end
     end
   end
-  ##def date_not_in_past
-    #if date < Date.today
-     # errors.add(:date, "cannot be in the past!")
-    #end
-  #end
 end
 
