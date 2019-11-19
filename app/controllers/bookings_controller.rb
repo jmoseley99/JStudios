@@ -20,17 +20,13 @@ class BookingsController < ApplicationController
   # GET /bookings/1/edit
   def edit
   end
-
-
-
   # POST /bookings
   # POST /bookings.json
   def create
     @booking = Booking.new(booking_params)
-
     respond_to do |format|
       if @booking.save
-        @new_booking = Booking.create(date: :date, time: :time, room_id: :room_id, user_id: :user_id, duration: :duration)
+        #Booking.create(date: :date, time: :time, room_id: :room_id, user_id: :user_id, duration: :duration)
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
@@ -57,7 +53,6 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy
-    @delete_booking = Booking.where(:date => @booking.date, :user_id => @booking.user_id).destroy_all
     @booking.destroy
     respond_to do |format|
       format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
