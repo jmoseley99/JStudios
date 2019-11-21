@@ -35,7 +35,12 @@ gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+#Gem to allow the user to login, and have that login authenticated. This means the user can then book studio sessions and have access to the app
 gem "clearance"
+
+#Gem to handle the mailer incase the user has a problem with their booking
+gem 'mail_form'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
