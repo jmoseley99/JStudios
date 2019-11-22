@@ -41,6 +41,8 @@ gem "clearance"
 #Gem to handle the mailer incase the user has a problem with their booking
 gem 'mail_form'
 
+#Gem to allow an admin account
+gem 'rails_admin', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

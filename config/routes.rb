@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :bookings
   resources :rooms
   get '/contacts', to: 'contacts#contact'
