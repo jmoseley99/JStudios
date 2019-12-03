@@ -10,29 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_22_110235) do
+ActiveRecord::Schema.define(version: 2019_12_03_144900) do
 
   create_table "bookings", force: :cascade do |t|
-    t.date "date"
-    t.time "time"
-    t.integer "room_id"
+    t.date "date", null: false
+    t.time "time", null: false
+    t.integer "room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "duration"
-  end
-
-  create_table "contacts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "duration", null: false
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.integer "room_id"
-    t.text "description"
+    t.integer "room_id", null: false
+    t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price"
+    t.integer "price", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_11_22_110235) do
     t.string "encrypted_password", limit: 128, null: false
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
-    t.boolean "is_admin", default: false
+    t.boolean "is_admin"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end

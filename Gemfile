@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+#git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.7'
 
@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 #Gem to allow the user to login, and have that login authenticated. This means the user can then book studio sessions and have access to the app
 gem "clearance"
 
-#Gem to handle the mailer incase the user has a problem with their booking
+#Gem to handle the mailer in case the user has a problem with their booking
 gem 'mail_form'
 
 #Gem to allow an admin account
