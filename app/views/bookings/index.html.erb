@@ -2,19 +2,19 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Your Bookings</h1>
-    <p class="lead">Here you can find the bookings you've made in our studios! You can choose to show, edit or delete your bookings with the help of the buttons!</p>
+    <h1 class="display-4"><%=h1 = t('booking.title') %></h1>
+    <p class="lead"><%=p = t('booking.description') %></p>
   </div>
 </div>
 
 <table class = 'table table-hover'>
   <thead class="thead-light">
     <tr>
-      <th>Date of Booking</th>
-      <th>Time of Booking</th>
-      <th>Duration (Minutes)</th>
-      <th>Studio Number</th>
-      <th>Cost</th>
+      <th><%=th = t('booking.date') %></th>
+      <th><%=th = t('booking.time') %></th>
+      <th><%=th = t('booking.duration') %></th>
+      <th><%=th = t('booking.std_no') %></th>
+      <th><%=th = t('booking.cost') %></th>
       <th colspan="5"></th>
     </tr>
   </thead>

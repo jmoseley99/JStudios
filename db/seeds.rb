@@ -5,3 +5,5 @@ Room.delete_all
 room_one = Room.create(room_id: 1, description: "DJ Studio", price: 15)
 room_two = Room.create(room_id: 2, description: "Band Recording Studio", price: 20)
 room_three = Room.create(room_id: 3, description: "Production Studio", price: 45)
+
+admin = User.create(email: "adminlogin@admin.com", password: "admin", is_admin: TRUE)

@@ -3,7 +3,9 @@
 one:
   room_id: 1
   description: MyText
+  price: 15
 
 two:
   room_id: 1
   description: MyText
+  price: 45

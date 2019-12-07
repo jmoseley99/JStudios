@@ -1,10 +1,15 @@
 class BookingsController < ApplicationController
-  before_action :require_login, only: [:new]
+  before_action :require_login, only: [:new, :destroy, :show]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   # GET /bookings
   # GET /bookings.json
   def index
     @bookings = Booking.all
+
+    if current_user.nil?
+      redirect_to '/sign_up'
+      flash[:error] ="Please sign in to book"
+    end
   end
 
   # GET /bookings/1
@@ -19,10 +24,12 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1/edit
   def edit
+
   end
   # POST /bookings
   # POST /bookings.json
   def create
+
     @booking = Booking.new(booking_params)
     respond_to do |format|
       if @booking.save
@@ -53,6 +60,7 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy
+
     @booking.destroy
     respond_to do |format|
       format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
