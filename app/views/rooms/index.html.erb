@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Our Studios</h1>
-    <p class="lead">Here you can browse the studios we offer, and discover more about us!</p>
+    <h1 class="display-4"><%=h1 = t('room.title') %></h1>
+    <p class="lead"><%=p = t('room.description') %></p>
   </div>
 </div>
 <table width="100%">
   <tr>
     <td width="25%">
       <img src = '/djbooth1.jpg' class = 'studio1'>
-      <p class="studio1Text">Studio 1: Our state of the art DJ Studio<br><ul style='font-size:15px'><li>2x CDJ2000 Nexus</li>
-      <li>DJM900 Nexus Mixer</li><li>High Definition Speakers</li><li>£15 p/h</li></ul>
-      <button type="button" class="btn btn-info"><a href = '/bookings/new'>Book Now!</a></button>
+      <p class="studio1Text"><%=t('room.st1.title') %><br><ul style='font-size:15px'><li><%=t('room.st1.item1') %></li>
+      <li><%=t('room.st1.item2') %></li><li><%=t('room.st1.item3') %></li><li><%=t('room.st1.price') %></li></ul>
+      <button type="button" class="btn btn-info"><a href = '/bookings/new'><%=t('room.book') %></a></button>
     </td>
     <td width="25%">
       <img src = '/bandstudio.jpg' class = 'studio2'>
-      <p class="studio1Text">Studio 2: Our band recording studio<br><ul style='font-size:15px'><li>Drum Kit included</li><li>Professional Microphone Setup</li>
-      <li>£20 p/h</li></ul>
-      <button type="button" class="btn btn-info"><a href = '/bookings/new'>Book Now!</a></button></p>
+      <p class="studio1Text"><%=t('room.st2.title') %><br><ul style='font-size:15px'><li><%=t('room.st2.item1') %></li><li><%=t('room.st2.item2') %></li>
+      <li><%=t('room.st2.price') %></li></ul>
+      <button type="button" class="btn btn-info"><a href = '/bookings/new'><%=t('room.book') %></a></button></p>
     </td>
     <td width="25%">
       <img src = '/studio3.jpg' class = 'studio2'>
-      <p class="studio1Text">Studio 3: Our state of the art production studio<ul style='font-size:15px'>
-      <li>Professional recording equipment</li><li>Mixing Desk</li><li>High Definition Speakers</li><li>£45 p/h</li></ul>
-      <button type="button" class="btn btn-info"><a href = '/bookings/new'>Book Now!</a></button></p>
+      <p class="studio1Text"><%=t('room.st3.title') %><ul style='font-size:15px'>
+      <li><%=t('room.st3.item1') %></li><li><%=t('room.st3.item2') %></li><li><%=t('room.st3.item3') %></li><li><%=t('room.st3.price') %></li></ul>
+      <button type="button" class="btn btn-info"><a href = '/bookings/new'><%=t('room.book') %></a></button></p>
     </td>
   </tr>
 </table>

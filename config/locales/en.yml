@@ -1,33 +1,6 @@
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
 
 en:
   home:
@@ -48,5 +21,28 @@ en:
     std_2: "Studio 2: Our Band Recording Studio"
     std_3: "Studio 3: Our Production Studio"
     currently_booked: "Currently booked sessions (Cannot Overlap!)"
+
+  room:
+    title: "Our Studios"
+    description: "Here you can browse he studios we offer, and discover more about us!"
+    book: "Book Now!"
+
+    st1:
+      title: "Studio 1: Our state of the art DJ Studio"
+      item1: "2x CDJ2000 Nexus"
+      item2: "DJM900 Nexus Mixer"
+      item3: "High Definition Speakers"
+      price: "£15 p/h"
+    st2:
+      title: "Studio 2: Our band recording studio"
+      item1: "Drum Kit included"
+      item2: "Professional Microphone Setup"
+      price: "£20 p/h"
+    st3:
+      title: "Studio 3: Our state of the art production studio"
+      item1: "Professional recording equipment"
+      item2: "Mixing Desk"
+      item3: "High Definition Speakers"
+      price: "£45 p/h"
 
 
