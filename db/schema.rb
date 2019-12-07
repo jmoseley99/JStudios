@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_12_03_144900) do
 
   create_table "bookings", force: :cascade do |t|
-    t.date "date", null: false
     t.time "time", null: false
+    t.date "date", null: false
     t.integer "room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
