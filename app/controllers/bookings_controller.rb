@@ -1,11 +1,13 @@
 class BookingsController < ApplicationController
+  # Making sure the user is logged in before accessing certain partials
   before_action :require_login, only: [:new, :destroy, :show]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   # GET /bookings
-  # GET /bookings.json
+
   def index
     @bookings = Booking.all
 
+    # Making sure the user is logged in. If not, they are redirected to the sign up page
     if current_user.nil?
       redirect_to '/sign_up'
       flash[:error] ="Please sign in to book"
@@ -18,6 +20,7 @@ class BookingsController < ApplicationController
   end
 
   # GET /bookings/new
+  # Making a new booking
   def new
     @booking = Booking.new
   end
@@ -28,6 +31,8 @@ class BookingsController < ApplicationController
   end
   # POST /bookings
   # POST /bookings.json
+  # Letting a user make a new booking. If the booking is successful, the user will be notified, if not, there will
+  # be an error displayed
   def create
 
     @booking = Booking.new(booking_params)
@@ -45,6 +50,7 @@ class BookingsController < ApplicationController
 
   # PATCH/PUT /bookings/1
   # PATCH/PUT /bookings/1.json
+  # This allows the user to update a pre-existing booking. If successful, the user will be notified.
   def update
     respond_to do |format|
       if @booking.update(booking_params)
@@ -59,8 +65,8 @@ class BookingsController < ApplicationController
 
   # DELETE /bookings/1
   # DELETE /bookings/1.json
+  # This allows the user to delete a booking they have previously made. If successful, they will be notified
   def destroy
-
     @booking.destroy
     respond_to do |format|
       format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
@@ -69,12 +75,11 @@ class BookingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_booking
       @booking = Booking.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # White list of parameters used to create a booking
     def booking_params
       params.require(:booking).permit(:date, :time, :room_id, :user_id, :duration)
     end
