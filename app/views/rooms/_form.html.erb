@@ -1,3 +1,8 @@
+<% if !current_user.is_admin %>
+     <script type="text/javascript">
+         window.location.href="/index"
+  </script>
+  <% end %>
 <%= form_with(model: room, local: true) do |form| %>
   <% if room.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +15,16 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= form.label :room_id%>
+    <%= form.select :room_id, [4,5] %>
+  </div><div class="field">
+  <%= form.label :description %>
+  <%= form.select :description, ["big"] %>
+</div><div class="field">
+  <%= form.label :price %>
+  <%= form.select :price, [10,20] %>
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>

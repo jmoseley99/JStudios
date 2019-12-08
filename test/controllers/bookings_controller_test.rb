@@ -40,13 +40,48 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     manual_sign_in_as(@user)
     get '/bookings/new'
     post bookings_url(as: @user), params: { booking: { date:Date.today, time:@time.strftime("%H:%M"), room_id:1, user_id:@user.id, duration:60 } }
-    assert_response :redirect
+    assert_response :success
+  end
+
+  # Test the user cannot create a booking with no date as it should be present
+  test "user should not be able to create a booking without a date" do
+    booking = Booking.new(date: "", time: @time.strftime("%H:%M"), room_id: 1, user_id: @user.id, duration: 60)
+    assert_not booking.save
+  end
+
+  # Test the user cannot create a booking with no time as it should be present
+  test "user should not be able to create a booking without a time" do
+    booking = Booking.new(date: Date.today, time: "", room_id: 1, user_id: @user.id, duration: 60)
+    assert_not booking.save
+  end
+
+  # Test the user cannot create a booking with no room_id as it should be present to align with the database constraints
+  test "user should not be able to create a booking without a room id" do
+    booking = Booking.new(date: Date.today, time: @time.strftime("%H:%M"), room_id: '', user_id: @user.id, duration: 60)
+    assert_not booking.save
+  end
+
+  # Test the user cannot create a booking with no user as it should be present to align with the database constraints
+  test "user should not be able to create a booking without a user attached to it" do
+    booking = Booking.new(date: Date.today, time: @time.strftime("%H:%M"), room_id: 3, user_id: '', duration: 60)
+    assert_not booking.save
+  end
+
+  # Test the user cannot create a booking with a duration that is not 30 or 60 minutes, as stated by the model validations
+  test "user should not be able to create a booking without a valid duration" do
+    booking = Booking.new(date: Date.today, time: @time.strftime("%H:%M"), room_id: 1, user_id: @user.id, duration: 45)
+    assert_not booking.save
+  end
+
+  # Test the user cannot create a booking with no duration as it should be present
+  test "user should not be able to create a booking without a duration" do
+    booking = Booking.new(date: Date.today, time: @time.strftime("%H:%M"), room_id: 1, user_id: @user.id, duration: '')
+    assert_not booking.save
   end
 
   # Test that the user cannot create a new booking as they are not signed in
   test "user cannot make new booking as not signed in" do
     get new_booking_path
-    post bookings_url(as: @user), params: { booking: { date:Date.today, time:@time.strftime("%H:%M"), room_id:1, user_id:@user.id, duration:60 } }
     assert_response :redirect
   end
 

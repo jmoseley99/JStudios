@@ -37,7 +37,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     respond_to do |format|
       if @booking.save
-        #Booking.create(date: :date, time: :time, room_id: :room_id, user_id: :user_id, duration: :duration)
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else

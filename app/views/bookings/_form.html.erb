@@ -1,3 +1,10 @@
+<% if signed_in? %>
+  <% if !current_user.is_admin %>
+    <script type="text/javascript">
+        window.location.href="/index"
+    </script>
+  <% end %>
+<% end %>
 <%= form_with(model: booking, local: true) do |form| %>
   <% if booking.errors.any? %>
     <div id="error_explanation">
@@ -35,7 +42,7 @@
   </div>
   <div class="field">
     <%= form.label :room_id, 'Studio Number: ' %>
-    <%= form.select :room_id, [1, 2, 3] %>
+    <%= form.select :room_id, Room.all.collect{ |e| [e.room_id, e.room_id]} %>
   </div>
   <div class = "field" style = 'display:none;'>
     <%= form.select :user_id, [current_user.id]%>
