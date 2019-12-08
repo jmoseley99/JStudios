@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-
     # Making sure the user is logged in. If not, they are redirected to the sign up page
     if current_user.nil?
       redirect_to '/sign_up'
