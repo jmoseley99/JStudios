@@ -2,10 +2,10 @@
 
 one:
   room_id: 1
-  description: MyText
+  description: Test
   price: 15
 
 two:
   room_id: 1
-  description: MyText
+  description: Test2
   price: 45
