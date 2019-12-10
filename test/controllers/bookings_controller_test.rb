@@ -14,6 +14,11 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     manual_sign_in_as(@user)
     get '/bookings'
     assert_response :success
+    assert_select 'h1', "Your Bookings"
+    assert_select 'p', "Here you can find the bookings you've made in our studios! You can choose to show, edit or delete your bookings with the help of the buttons!"
+    assert_select 'table' do
+      assert_select 'td:nth-child(1)', "Date of booking"
+    end
   end
 
   # Test that the user is not able to view the bookings page when not logged in

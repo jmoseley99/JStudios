@@ -3,7 +3,7 @@ class Contact < MailForm::Base
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :message,    :validate => true
   attribute :nickname,  :captcha  => true
-
+  validate :inputs_exist
   # Declare the e-mail headers. It accepts anything the mail method
   # in ActionMailer accepts.
   def headers
@@ -13,4 +13,17 @@ class Contact < MailForm::Base
         :from => %("#{name}" <#{email}>)
     }
   end
+
+  def inputs_exist
+    if name.nil?
+      errors.add(:name, "must exist")
+    end
+    if email.nil?
+      errors.add(:email, "must exist")
+    end
+    if message.nil?
+      errors.add(:message, "must have a body")
+    end
+  end
+
 end
