@@ -8,7 +8,7 @@ class Booking < ApplicationRecord
   validates :room_id, presence: true
   validates :duration, presence: true
   validates :user_id, presence: true
-  validate :no_time_overlap
+  validate :no_time_overlap, :is_date_in_past
 
   #This method checks to ensure that the user cannot book a studio session at the same time, and in the same room, as a previously booked session.
   #A collection is made of bookings, where the date is the same to the date of the new booking. This collection is looped through. And if for any
@@ -25,8 +25,21 @@ class Booking < ApplicationRecord
 
   def valid_booking_time
     if duration != 30 || duration != 60
-      errors.add(:duration, "Duration must be either 30 or 60 minutes")
+      errors.add(:duration, " must be either 30 or 60 minutes")
     end
+  end
+
+  # This method ensures that a user cannot book a session for a date in the past, as that date will have gone
+  # so the booking will be wasted
+  def is_date_in_past
+    if date.nil?
+      errors.add(:date, "cannot be null")
+    else
+      if date.past?
+        errors.add(:date, "cannot be in the past")
+      end
+    end
+
   end
 end
 

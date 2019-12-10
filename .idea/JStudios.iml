@@ -39,7 +39,6 @@
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v5.2.3, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v5.2.3, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.7.0, ruby-2.5.7-p206) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="archive-zip (v0.12.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v9.0.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="autoprefixer-rails (v9.7.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.13, ruby-2.5.7-p206) [gem]" level="application" />
@@ -50,8 +49,6 @@
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.0.2, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v11.0.1, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.29.0, ruby-2.5.7-p206) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="childprocess (v3.0.0, ruby-2.5.7-p206) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="chromedriver-helper (v2.1.1, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="clearance (v1.17.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.2.2, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, ruby-2.5.7-p206) [gem]" level="application" />
@@ -66,7 +63,6 @@
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.2, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml (v5.1.2, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.7.0, ruby-2.5.7-p206) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="io-like (v0.3.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.9.1, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.3.5, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-ui-rails (v6.0.1, ruby-2.5.7-p206) [gem]" level="application" />
@@ -88,7 +84,7 @@
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.2, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.10.4, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v4.0.1, ruby-2.5.7-p206) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="puma (v3.12.1, ruby-2.5.7-p206) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="puma (v3.12.2, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.0.7, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-pjax (v1.1.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v1.1.0, ruby-2.5.7-p206) [gem]" level="application" />
@@ -102,13 +98,11 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v1.6.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="remotipart (v1.4.3, ruby-2.5.7-p206) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.0.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.7.4, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-listen (v4.0.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v5.1.0, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sassc (v2.2.1, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sassc-rails (v2.1.2, ruby-2.5.7-p206) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v3.142.6, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v3.7.2, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.2.1, ruby-2.5.7-p206) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.4.1, ruby-2.5.7-p206) [gem]" level="application" />

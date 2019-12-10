@@ -9,4 +9,4 @@ room_three = Room.create(room_id: 3, description: "Production Studio", price: 45
 
 # Creating an initial admin account, as not possible to make one when regularly signing up, but can be done
 # on the admin page
-admin = User.create(email: "adminlogin@admin.com", password: "admin", is_admin: TRUE)
+admin = User.create(email: "adminlogin@admin.com", password: "admin", is_admin: true)

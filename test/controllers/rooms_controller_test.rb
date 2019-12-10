@@ -49,24 +49,6 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 
-  # This test ensures that a room cannot be created without an id
-  test "admin not able to create room with missing room id" do
-    room = Room.create(room_id: '', description: "Test", price: 50)
-    assert_not room.save
-  end
-
-  # This test ensures that a room cannot be created without a description
-  test "admin not able to create room with no description" do
-    room = Room.create(room_id: 10, description: "", price: 50)
-    assert_not room.save
-  end
-
-  # This test ensures that a room cannot be created with a price less than zero
-  test "admin not able to create room with price less than zero" do
-    room = Room.create(room_id: 10, description: "test", price: -30)
-    assert_not room.save
-  end
-
   # This test ensures that the edit page cannot be accessed when not logged in
   test "test user cannot edit room when not logged in" do
     get '/rooms/edit'
