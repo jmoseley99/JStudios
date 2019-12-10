@@ -17,13 +17,13 @@
   <% end %>
   <div class="field">
     <%= form.label :room_id%>
-    <%= form.select :room_id, [4,5] %>
+    <%= form.text_field :room_id %>
   </div><div class="field">
   <%= form.label :description %>
-  <%= form.select :description, ["big"] %>
+  <%= form.text_field :description%>
 </div><div class="field">
   <%= form.label :price %>
-  <%= form.select :price, [10,20] %>
+  <%= form.text_field :price %>
 </div>
   <div class="actions">
     <%= form.submit %>

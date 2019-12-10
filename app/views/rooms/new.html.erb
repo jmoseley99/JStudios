@@ -3,7 +3,11 @@
       window.location.href="/index"
   </script>
 <% end %>
-<h1>New Room</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%=h1 = t('room.new_room') %></h1>
+  </div>
+</div>
 
 <%= render 'form', room: @room %>
 

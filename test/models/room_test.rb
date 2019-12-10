@@ -36,4 +36,16 @@ class RoomTest < ActiveSupport::TestCase
     room = Room.new(room_id:10, description: "test", price: '')
     assert_not room.save
   end
+
+  # This test ensures that a room cannot be created without a number for a room id
+  test "not able to create room without number" do
+    room = Room.new(room_id: "test", description: "test", price: 4)
+    assert_not room.save
+  end
+
+  # This test ensures that a room cannot be created without a number for a price
+  test "not able to create room without numerical price" do
+    room = Room.new(room_id: 10, description: "test", price: "test")
+    assert_not room.save
+  end
 end

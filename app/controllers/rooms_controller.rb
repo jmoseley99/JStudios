@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   before_action :require_login, only: [:new, :edit, :update, :destroy]
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-  before_action :is_user_admin
+  before_action :is_user_admin, only: [:index, :new, :edit, :destroy]
   # GET /rooms
   # GET /rooms.json
   def index
@@ -72,8 +72,12 @@ class RoomsController < ApplicationController
   end
 
   def is_user_admin
-    if !current_user.is_admin
+    unless signed_in?
       redirect_to '/index'
+    else
+      if !current_user.is_admin
+        redirect_to '/index'
+      end
     end
   end
   # Never trust parameters from the scary internet, only allow the white list through.

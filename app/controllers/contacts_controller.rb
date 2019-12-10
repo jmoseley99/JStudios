@@ -13,7 +13,6 @@ class ContactsController < ApplicationController
         flash.now[:error]
       else
         format.html { render 'contact' }
-        #format.js   { flash.now[:error] = @message = "Message did not send." }
       end
     end
   end

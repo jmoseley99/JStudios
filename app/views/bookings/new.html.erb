@@ -4,7 +4,11 @@
 <title>Bookings</title>
 </head>
 <body>
-<h1>Book a Studio Session!</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%=h1 = t('booking.new_session') %></h1>
+  </div>
+</div>
 <%= render 'form', booking: @booking %>
 
 <%= link_to 'Back', bookings_path %>
