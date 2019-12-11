@@ -14,3 +14,18 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+/* This function shows the total amount spent by the user when the button is clicked*/
+$(document).ready(function(){
+    $( "#show" ).click(function(){
+        if ($(".totalSpent_show").is(":hidden")){
+            $(".totalSpent_show").hide()
+            $(".totalSpent_show").css("visibility", "visible").slideDown("slow");
+        } else {
+          $(".totalSpent_show").hide();
+        }
+    });
+});
+
+
+

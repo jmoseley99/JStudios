@@ -6,7 +6,6 @@
   <% end %>
 <% end %>
 <p id="notice"><%= notice %></p>
-
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4"><%=h1 = t('booking.title') %></h1>
@@ -49,4 +48,15 @@
 <br>
 <div class = 'newBooking'>
   <button type="button" class="btn btn-success"><%= link_to 'New Booking', new_booking_path %></button>
+</div>
+<br>
+<div class = 'totalSpent'>
+  <button type = 'button' class = "btn btn-info" id = 'show'>Click Me To View Total Spent</button>
+  <div class = 'totalSpent_show'>
+    <div class = 'totalSpent_text'>
+      You have spent
+    £<%= get_total_spent %> on studio sessions!<br>
+    </div>
+</div>
+
 </div>

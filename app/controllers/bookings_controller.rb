@@ -1,9 +1,9 @@
 class BookingsController < ApplicationController
+
   # Making sure the user is logged in before accessing certain partials
   before_action :require_login, only: [:new, :destroy, :show]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   # GET /bookings
-
   def index
     @bookings = Booking.all
     # Making sure the user is logged in. If not, they are redirected to the sign up page
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        format.html { redirect_to bookings_path(@booking), notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new }
@@ -71,6 +71,21 @@ class BookingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # This method allows the user to see how much they have spent in total
+  def get_total_spent
+    @total = 0
+    @user_bookings = Booking.where(:user_id => current_user.id)
+    @user_bookings.each do |usr|
+      @temp_room = Room.where(:room_id => usr.room_id)
+      @temp_room.each do |room|
+        @total = @total + room.price
+      end
+    end
+    return @total
+  end
+  helper_method :get_total_spent
+
 
   private
     def set_booking

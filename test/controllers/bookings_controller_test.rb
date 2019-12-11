@@ -74,4 +74,12 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     assert_equal(booking.duration, 30)
   end
 
+  # Test that the price totalling method works correctly
+  test "show total prices of bookings" do
+    manual_sign_in_as(@user)
+    get '/bookings/new'
+    post bookings_url(as: @user), params: { booking: { date:Date.today, time:@time.strftime("%H:%M"), room_id:1, user_id:@user.id, duration:60 } }
+    assert_equal(60, @controller.send(:get_total_spent))
+  end
+
 end
