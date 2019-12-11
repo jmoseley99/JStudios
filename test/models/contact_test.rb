@@ -1,3 +1,4 @@
+require 'test_helper'
 class ContactTest < ActiveSupport::TestCase
   setup do
     @name = "Foo Bar"

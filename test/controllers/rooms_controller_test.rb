@@ -13,6 +13,7 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
     manual_sign_in_as(@user)
     get index_path
     assert_response :success
+    assert_select 'h1', "JStudios"
   end
 
   # This test ensures that an admin account can also access the rooms page
