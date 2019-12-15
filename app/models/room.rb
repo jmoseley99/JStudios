@@ -3,7 +3,7 @@ class Room < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validate :price_over_zero, :empty_description, :illegal_room_id
-
+  has_many :bookings
 
 
 
