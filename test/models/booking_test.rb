@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class BookingTest < ActiveSupport::TestCase
+  # This setup ensures that there is a user to access ids, as well as a time
   setup do
     @user = User.create(email: "foo@bar.com", password: "foobar")
     @time = Time.zone.local(2019, 12, 07, 9, 0)
@@ -50,9 +51,18 @@ class BookingTest < ActiveSupport::TestCase
   # Test that no two bookings can occur in the same room at the same time
   test "user should not be able to create two bookings at the same time" do
     legal_booking = Booking.new(date: Date.today, time: @time.strftime("%H:%M"), room_id: 1, user_id: @user.id, duration: 60)
-    legal_booking.save
+    assert legal_booking.save
     illegal_booking = booking = Booking.new(date: Date.today, time: @time.strftime("%H:%M"), room_id: 1, user_id: @user.id, duration: 60)
     assert_not illegal_booking.save
   end
+
+  # Test that two bookings can occur at the same time provided they are in different studio rooms
+  test "user can book two sessions in seperate studios at the same time" do
+    legal_booking = Booking.new(date: Date.today, time: @time.strftime("%H:%M"), room_id: 1, user_id: @user.id, duration: 60)
+    assert legal_booking.save
+    illegal_booking = booking = Booking.new(date: Date.today, time: @time.strftime("%H:%M"), room_id: 2, user_id: @user.id, duration: 60)
+    assert illegal_booking.save
+  end
+
 
 end

@@ -17,10 +17,10 @@
                 <a class="navbar-brand" href="/index">JStudios</a>
               </div>
               <ul class="nav navbar-nav">
-                <li><a href="/sign_in">Sign In</a></li>
-                <li><a href="/bookings">Book A Studio</a></li>
-                <li><a href="/rooms">Our Studios</a></li>
-                <li><a href="/contacts">Contact Us</a></li>
+                <li><a href="/sign_in"><%=t('application.sign_in')%></a></li>
+                <li><a href="/bookings"><%=t('application.book')%></a></li>
+                <li><a href="/rooms"><%=t('application.studios')%></a></li>
+                <li><a href="/contacts"><%=t('application.contact')%></a></li>
                 <li><%= current_user.email %></li>
                 <li><%= button_to "Sign out", sign_out_path, method: :delete %></li>
               </ul>

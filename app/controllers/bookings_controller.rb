@@ -72,7 +72,8 @@ class BookingsController < ApplicationController
     end
   end
 
-  # This method allows the user to see how much they have spent in total
+  # This method allows the user to see how much they have spent in total, and is reloaded every time the page is refreshed
+  # So after a new booking, the page is reloaded and the new total cost is worked out
   def get_total_spent
     @total = 0
     @user_bookings = Booking.where(:user_id => current_user.id)

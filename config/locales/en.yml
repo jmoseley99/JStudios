@@ -3,13 +3,21 @@
 # than English, add the necessary files in this directory.
 
 en:
+  application:
+    sign_in: "Sign In"
+    book: "Book a Studio"
+    studios: "Our Studios"
+    contact: "Contact Us"
   home:
+    # These are the strings used on the index page
     title: "JStudios"
     description: "Welcome to our music studios! To get started, please sign in"
   contact:
+    # These are the strings used on the contact page
     title: "Contact Us"
     description: "If you've had an issue with your booking, please email us using the form below"
   booking:
+    # These are the strings used on the booking page, along with the partials e.g. new, edit
     title: "Your Bookings"
     description: "Here you can find the bookings you've made in our studios! You can choose to show, edit or delete your bookings with the help of the buttons!"
     date: "Date of Booking"
@@ -25,6 +33,7 @@ en:
     currently_booked: "Currently booked sessions (Cannot Overlap!)"
 
   room:
+    # These are the strings used on the room views, including the partials e.g. new, edit etc...
     title: "Our Studios"
     description: "Here you can browse he studios we offer, and discover more about us!"
     book: "Book Now!"

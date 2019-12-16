@@ -14,6 +14,8 @@ class Contact < MailForm::Base
     }
   end
 
+  # This validation method ensures that the name, email and message are all filled in in order to be
+  # able to send a contact email
   def inputs_exist
     if name.nil?
       errors.add(:name, "must exist")

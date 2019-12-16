@@ -19,7 +19,7 @@
 $(document).ready(function(){
     $( "#show" ).click(function(){
         if ($(".totalSpent_show").is(":hidden")){
-            $(".totalSpent_show").hide()
+            $(".totalSpent_show").hide();
             $(".totalSpent_show").css("visibility", "visible").slideDown("slow");
         } else {
           $(".totalSpent_show").hide();
