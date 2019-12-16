@@ -23,12 +23,6 @@ class Booking < ApplicationRecord
     end
   end
 
-  def valid_booking_time
-    if duration != 30 || duration != 60
-      errors.add(:duration, " must be either 30 or 60 minutes")
-    end
-  end
-
   # This method ensures that a user cannot book a session for a date in the past, as that date will have gone
   # so the booking will be wasted
   def is_date_in_past

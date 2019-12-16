@@ -71,16 +71,19 @@ class RoomsController < ApplicationController
     redirect_to '/rooms'
   end
 
+  # This method is used to check the user in an admin. If not, the user is redirected as only
+  # admin accounts can edit, create and remove rooms.
   def is_user_admin
     unless signed_in?
       redirect_to '/index'
     else
-      if !current_user.is_admin
+      unless current_user.is_admin
         redirect_to '/index'
       end
     end
   end
-  # Never trust parameters from the scary internet, only allow the white list through.
+
+  # Whitelist of parameters when creating a new room
   def room_params
     params.require(:room).permit(:room_id, :description, :price)
   end

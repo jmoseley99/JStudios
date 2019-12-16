@@ -3,7 +3,9 @@
 # than English, add the necessary files in this directory.
 
 en:
+  footer: "Book a session today!"
   application:
+    # These are the strings displayed on the header of the application
     sign_in: "Sign In"
     book: "Book a Studio"
     studios: "Our Studios"

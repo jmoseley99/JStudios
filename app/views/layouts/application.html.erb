@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Untitled</title>
+    <title>JStudios</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +10,7 @@
   </head>
 
   <body>
-      <footer> <% if signed_in? %>
+      <header> <% if signed_in? %>
           <nav class="navbar navbar-default">
             <div class="container-fluid">
               <div class="navbar-header">
@@ -32,7 +32,10 @@
         <% end %>
           </nav>
 
-      </footer>
+      </header>
     <%= yield %>
+      <footer style = "text-align: center">
+        <%=t('footer') %>
+      </footer>
   </body>
 </html>

@@ -8,7 +8,8 @@ class Room < ApplicationRecord
 
 
   # This validation ensures that the admin cannot create a new room with the id
-  # less than zero
+  # less than zero. Other checks are then made to ensure that the room id is a number, and if so,
+  # it is more than zero
   def illegal_room_id
     if room_id.nil?
       errors.add(:room_id, "cannot be null")
